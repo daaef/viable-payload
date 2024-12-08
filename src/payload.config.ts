@@ -9,6 +9,18 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Details } from '@/collections/Details'
+import { JoinUsContent } from '@/collections/JoinUsContent'
+import { Publications } from '@/collections/Publications'
+import { Testimony } from '@/collections/Testimony'
+import { EventGallery } from '@/collections/EventGallery'
+import { ContributionsFaq } from '@/collections/ContributionsFaq'
+import { DonatingFaq } from '@/collections/DonatingFaq'
+import { FundingFaq } from '@/collections/FundingFaq'
+import { GeneralFaq } from '@/collections/GeneralFaq'
+import { ProblemsFaq } from '@/collections/ProblemsFaq'
+import { VolunteerFaq } from '@/collections/VolunteerFaq'
+import { Acknowledgements } from '@/collections/Acknowledgements'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -20,7 +32,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Acknowledgements, Details, JoinUsContent, Publications, Testimony, EventGallery, ContributionsFaq, DonatingFaq, FundingFaq, GeneralFaq, ProblemsFaq, VolunteerFaq],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -36,4 +48,5 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
+  cors: '*'
 })

@@ -1,18 +1,43 @@
 import type { CollectionConfig } from 'payload'
 
-export const Media: CollectionConfig = {
-  slug: 'media',
+export const EventGallery: CollectionConfig = {
+  slug: 'event-gallery',
   access: {
     read: () => true,
   },
   fields: [
+    {
+      name: 'eventType',
+      type: 'text',
+      required: true,
+    },
     {
       name: 'title',
       type: 'text',
       required: true,
     },
     {
-      name: 'alt',
+      name: 'subtitle',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'href',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'imageSrc',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'imageAlt',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'content',
       type: 'text',
       required: true,
     },
