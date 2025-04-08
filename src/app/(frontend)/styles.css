@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: white;
+}
+
+:root {
+  --light-green-50-rgb: rgba(251, 251, 249, 1);
+  --light-green-100-rgb: rgba(249, 249, 245, 1);
+  --light-green-200-rgb: rgba(243, 243, 236, 1);
+  --light-green-300-rgb: rgba(238, 238, 226, 1);
+  --light-green-400-rgb: rgba(232, 232, 217, 1);
+  --light-green-500-rgb: rgba(226, 226, 207, 1);
+  --light-green-600-rgb: rgba(194, 194, 153, 1);
+  --light-green-700-rgb: rgba(161, 161, 99, 1);
+  --light-green-800-rgb: rgba(108, 108, 65, 1);
+  --light-green-900-rgb: rgba(54, 54, 33, 1);
+  --light-green-950-rgb: rgba(25, 25, 15, 1);
+
+  --green-50-rgb: rgba(243, 245, 234, 1);
+  --green-100-rgb: rgba(233, 237, 217, 1);
+  --green-200-rgb: rgba(209, 217, 176, 1);
+  --green-300-rgb: rgba(187, 198, 138, 1);
+  --green-400-rgb: rgba(165, 180, 101, 1);
+  --green-500-rgb: rgba(136, 150, 73, 1);
+  --green-600-rgb: rgba(109, 120, 58, 1);
+  --green-700-rgb: rgba(91, 91, 48, 1);
+  --green-800-rgb: rgba(53, 58, 28, 1);
+  --green-900-rgb: rgba(28, 31, 15, 1);
+  --green-950-rgb: rgba(12, 14, 7, 1);
+
+  --orange-50-rgb: rgba(255, 246, 235, 1);
+  --orange-100-rgb: rgba(255, 237, 214, 1);
+  --orange-200-rgb: rgba(255, 220, 173, 1);
+  --orange-300-rgb: rgba(255, 202, 133, 1);
+  --orange-400-rgb: rgba(255, 184, 92, 1);
+  --orange-500-rgb: rgba(255, 168, 54, 1);
+  --orange-600-rgb: rgba(245, 139, 0, 1);
+  --orange-700-rgb: rgba(184, 104, 0, 1);
+  --orange-800-rgb: rgba(122, 69, 0, 1);
+  --orange-900-rgb: rgba(61, 35, 0, 1);
+  --orange-950-rgb: rgba(31, 17, 0, 1);
+
+  --neutral-10-rgb: rgba(239, 242, 246, 1);
+  --neutral-50-rgb: rgba(151, 171, 199, 1);
+  --neutral-100-rgb: rgba(120, 144, 174, 1);
+  --neutral-150-rgb: rgba(105, 130, 160, 1);
+  --neutral-200-rgb: rgba(90, 118, 148, 1);
+  --neutral-500-rgb: rgba(72, 98, 132, 1);
+  --neutral-600-rgb: rgba(58, 80, 107, 1);
+  --neutral-700-rgb: rgba(44, 62, 82, 1);
+  --neutral-900-rgb: rgba(28, 40, 55, 1);
+
+  --foreground-rgb: var(--neutral-100-rgb);
+  --background-start-rgb: var(--light-green-100-rgb);
+  --background-end-rgb: var(--light-green-100-rgb);
+
+  --header-foreground-rgb: var(--neutral-500-rgb);
+  --header-background-rgb: var(--neutral-10-rgb);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: var(--light-green-50-rgb);
+    --background-start-rgb: var(--green-900-rgb);
+    --background-end-rgb: var(--green-900-rgb);
+
+    --header-foreground-rgb: var(--green-300-rgb);
+    --header-background-rgb: var(--green-700-rgb);
+  }
+}
+
+.navigation-header {
+  color: var(--header-foreground-rgb);
+}
+.header {
+  color: var(--header-foreground-rgb);
+  background: var(--header-background-rgb);
+}
+
+h1 {
+  font-size: xxx-large;
+}
+h2 {
+  font-size: xx-large;
+}
+h3 {
+  font-size: x-large;
+}
+h4 {
+  font-size: large;
+}
+h5 {
+  font-size: medium;
+}
+h6 {
+  font-size: small;
+}
+
+.green-bg-and-color {
+  color: var(--green-100-rgb);
+  background: var(--green-500-rgb);
+}
+.green-bg-and-color:hover {
+  color: var(--orange-100-rgb);
+  background: var(--orange-800-rgb);
+}
+
+.soft-green-bg-and-color {
+  color: var(--light-green-800-rgb);
+  background: var(--green-200-rgb);
+}
+.soft-green-bg-and-color:hover {
+  color: var(--orange-200-rgb);
+  background: var(--orange-800-rgb);
+}
+
+.orange-bg-and-color {
+  background-color: var(--orange-600-rgb);
+  color: var(--orange-50-rgb);
+}
+
+.orange-bg-and-color:hover {
+  background-color: var(--orange-500-rgb);
+  color: var(--orange-100-rgb);
+}
+
+.image-shadow-neutral-600 {
+  @apply shadow-lg shadow-black;
+}
+
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--light-green-500-rgb);
+  color: var(--neutral-600-rgb);
+  text-align: center;
+}
+
+.embla {
+  margin: auto;
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 50%;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+
+.payload-richtext p {
+  margin-bottom: 5px
+}

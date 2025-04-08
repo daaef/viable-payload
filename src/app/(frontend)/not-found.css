@@ -1,0 +1,4 @@
+body:has(div#not-found-page) {
+  background-color: var(--orange-400-rgb);
+  color: var(--orange-950-rgb);
+}
