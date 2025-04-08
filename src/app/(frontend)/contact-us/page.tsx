@@ -6,6 +6,7 @@ import { fetchFaqs } from "@/utils/payloadUtils";
 
 export default async function ContactUs(this: any) {
   const faqs = await fetchFaqs();
+  console.log(faqs);
 
   return (
     <main>

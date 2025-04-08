@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Icon } from "@iconify/react/dist/iconify.js";
-
+import { MapPinIcon } from "@heroicons/react/20/solid";
 interface CarouselCardProps {
   isHovered: boolean;
   title: string;
@@ -40,11 +39,9 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
         </div>
         <div className="absolute sm:w-48 sm:right-0 bg-[var(--light-green-500-rgb)] sm:rounded-tl-md w-full bottom-0 py-1 text-center">
           <span className="text-black text-sm font-bold">
-            <Icon
-              icon="mdi:location"
-              width={20}
-              height={20}
-              className="inline mr-2"
+            <MapPinIcon
+              className="h-[20px] w-[20px] inline mr-2"
+              aria-hidden="true"
             />
             {location}
           </span>
