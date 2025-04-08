@@ -47,5 +47,7 @@ export default buildConfig({
   sharp,
   plugins: [
     // storage-adapter-placeholder
+    payloadCloudPlugin(),
   ],
+  cors: "*",
 });
