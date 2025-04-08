@@ -125,10 +125,10 @@ export default function FaqSubjects({ faqs }: FaqSubjectsProps) {
         id="faq-sections"
       >
         {activeSection === "general" && <GeneralFaqs faqs={faqDocs} />}
-        {activeSection === "volunteer" && <VolunteerFaqs />}
+        {activeSection === "volunteer" && <VolunteerFaqs faqs={faqDocs} />}
         {/* {activeSection === "donation" && <Donation />} */}
-        {activeSection === "problem" && <Problem />}
-        {activeSection === "contribute" && <Contribute />}
+        {activeSection === "problem" && <Problem faqs={faqDocs} />}
+        {activeSection === "contribute" && <Contribute faqs={faqDocs} />}
         {/* {activeSection === "funding" && <Fund />} */}
       </div>
     </div>
