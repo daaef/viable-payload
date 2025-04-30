@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
 
-  // @ts-expect-error
+  // @ts-expect-error this is a bug in the types
   const acknowledgements: AcknowledgementResponse = await fetchAckowledgements()
   return (
     <html lang="en">
