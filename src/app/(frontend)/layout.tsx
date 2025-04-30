@@ -7,6 +7,7 @@ import Footer from "./_components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import Acknowledgements from "./_components/acknowledgements";
 import {fetchAckowledgements} from "@/utils/payloadUtils";
+import {AcknowledgementResponse} from "@/utils/payloadUtils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,8 @@ export const metadata: Metadata = {
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
 
-  const ackowledgements = await fetchAckowledgements()
+  // @ts-expect-error
+  const acknowledgements: AcknowledgementResponse = await fetchAckowledgements()
   return (
     <html lang="en">
       <React.StrictMode>
@@ -29,7 +31,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           </div>
           {children}
           <Analytics />
-          <Acknowledgements acknowledgements={ackowledgements?.docs} />
+          <Acknowledgements acknowledgements={acknowledgements?.docs} />
           <div id={"footer"}>
             <Footer />
           </div>

@@ -6,6 +6,37 @@ import config from "@/payload.config";
  * @param options Optional query parameters
  * @returns Array of FAQ items
  */
+
+export interface Acknowledgement {
+  id: number
+  logo: {
+    url: string
+    alt: string
+    filename: string
+    mimeType: string
+    filesize: number
+    width: number
+    height: number
+  }
+  title: string
+  alt: string
+  updatedAt: string
+  createdAt: string
+}
+
+export interface AcknowledgementResponse {
+  docs: Acknowledgement[];
+  totalDocs: number;
+  limit: number;
+  totalPages: number;
+  page: number;
+  pagingCounter: number;
+  hasPrevPage: boolean;
+  hasNextPage: boolean;
+  prevPage: number | null;
+  nextPage: number | null;
+}
+
 export async function fetchFaqs(options = {}) {
   const payloadConfig = await config;
   const payload = await getPayload({ config: payloadConfig });

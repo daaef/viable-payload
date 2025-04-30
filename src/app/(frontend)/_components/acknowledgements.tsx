@@ -1,11 +1,11 @@
 "use client";
-import { Acknowledgement } from "@/payload-types";
 
 import React from "react";
 
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import {Acknowledgement} from "@/utils/payloadUtils";
 
 interface AcknowledgementsProps {
   acknowledgements: Acknowledgement[];
@@ -71,8 +71,8 @@ function Acknowledgements({acknowledgements}: AcknowledgementsProps) {
                   className="w-[320px] h-[52px] object-contain"
                   src={acknowledgement?.logo?.url}
                   alt={acknowledgement?.logo?.alt}
-                  width={acknowledgement?.logo?.width}
-                  height={acknowledgement?.logo?.height}
+                  width={320}
+                  height={52}
                 />
               </div>
             ))}
