@@ -1,4 +1,4 @@
-import GoBack from "@/app/_components/go-back";
+import GoBack from "../../_components/go-back";
 import Image from "next/image";
 
 export default function Extremadura() {
