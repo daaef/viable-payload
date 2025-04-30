@@ -22,15 +22,15 @@ interface TestimonyContent {
 }
 
 export default function Testimony() {
-  let maxLines = 6;
+  const maxLines = 6;
 
   const [idx, setidx] = useState(0);
 
   const [isClamped, setIsClamped] = useState(false);
-  const textRef: React.RefObject<HTMLParagraphElement> =
+  const textRef: any=
     useRef<HTMLParagraphElement>(null);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   const contents = [
     {
@@ -116,7 +116,7 @@ export default function Testimony() {
 
     const display = (content: TestimonyContent) => {
       const text = content?.content || "";
-      // @ts-ignore
+
       return (
         <>
           <blockquote className="sm:text-lg leading-8">
@@ -152,9 +152,8 @@ export default function Testimony() {
           <ChevronLeftIcon
             className="h-12 w-12 stroke-[3px] text-[var(--green-100-rgb)]"
             onClick={() => {
-              idx > 0 && setidx((idx) => idx - 1);
-            }}
-          />
+              if (idx > 0) setidx((idx) => idx - 1);
+            }}          />
         </div>
         <div className="flex w-full flex-col">
           <div
@@ -184,7 +183,7 @@ export default function Testimony() {
           <ChevronRightIcon
             className="h-12 w-12 stroke-[3px] text-[var(--green-100-rgb)]"
             onClick={() => {
-              idx < nPages - 1 && setidx((idx) => idx + 1);
+              if (idx < nPages - 1) setidx((idx) => idx + 1);
             }}
           />
         </div>
